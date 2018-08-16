@@ -18,10 +18,13 @@ RUN apk --update add apache2 php7-apache2 php7-ldap php7-mcrypt php7-mbstring cu
 RUN  rm -rf /var/lib/apt/lists/* && \
      rm -rf /var/cache/apk/* && \
      rm -rf /var/www/localhost/htdocs/*
-     
+
 # This is where configuration goes
 RUN mkdir -p /etc/service/apache2 && \
     mkdir -p /run/apache2
+
+RUN ln -sf /dev/stdout /var/log/apache2/ssp_access.log && \
+    ln -sf /dev/stderr /var/log/apache2/ssp_error.log
 
 ADD assets/config.inc.php /usr/share/self-service-password/conf/config.inc.php
 ADD assets/self-service-password.conf /etc/apache2/conf.d/self-service-password.conf
