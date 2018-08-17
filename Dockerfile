@@ -3,11 +3,7 @@ FROM alpine:latest
 MAINTAINER tuudik, <marko@radr.eu>
 
 #ENV VARIABLES
-ENV LTB_VERSION=1.3 \
-    LDAP_URL="ldap://ldap:389" \
-    LDAP_BINDDN="cn=admin,dc=ldap,dc=example,dc=com" \
-    LDAP_BINDPW="changeme" \
-    LDAP_BASE="dc=ldap,dc=example,dc=com"
+ENV LTB_VERSION=1.3 
 
 # Install Apache2, PHP and LTB ssp
 RUN apk --update add apache2 php7-apache2 php7-ldap php7-mcrypt php7-mbstring curl && \
@@ -27,6 +23,7 @@ RUN ln -sf /dev/stdout /var/log/apache2/ssp_access.log && \
     ln -sf /dev/stderr /var/log/apache2/ssp_error.log
 
 ADD assets/config.inc.php /usr/share/self-service-password/conf/config.inc.php
+ADD assets/env.helper.php /usr/share/self-service-password/conf/env.helper.php
 ADD assets/self-service-password.conf /etc/apache2/conf.d/self-service-password.conf
 
 COPY docker-ltb.sh /
