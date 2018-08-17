@@ -1,6 +1,6 @@
 FROM alpine:latest
 
-MAINTAINER tuudik, <marko@radr.eu>
+MAINTAINER tuudik <marko@radr.eu>, litewhatever <litewhatever@gmail.com>
 
 #ENV VARIABLES
 ENV LTB_VERSION=1.3 
