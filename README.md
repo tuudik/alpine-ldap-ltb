@@ -1,5 +1,7 @@
 [![](https://dockerbuildbadges.quelltext.eu/status.svg?organization=tuudik&repository=alpine-ldap-ltb)](https://hub.docker.com/r/tuudik/alpine-ldap-ltb/builds/)
 
+https://github.com/tuudik/alpine-ldap-ltb/blob/master/assets/self-service-password.conf done by @litewhatever
+
 # What is ldap-ltb?
 
 ldap-ltb is a wrapper for the LDAP Tool Box (LTB) Self Service Password utility, 
