@@ -300,7 +300,7 @@ $default_action = env('DEFAULT_ACTION', 'change');
 
 # Launch a posthook script after successful password change
 #$posthook = "/usr/share/self-service-password/posthook.sh";
-$display_posthook_error = ;env('DISPLAY_POSTHOOK_ERROR', true);
+$display_posthook_error = env('DISPLAY_POSTHOOK_ERROR', true);
 
 # Hide some messages to not disclose sensitive information
 # These messages will be replaced by badcredentials error
