@@ -43,7 +43,7 @@ $ldap_bindpw = env('LDAP_BINDPW', 'secret');
 $ldap_base = env('LDAP_BASE', 'dc=example,dc=com');
 $ldap_login_attribute = env('LDAP_LOGIN_ATTRIBUTE', 'uid');
 $ldap_fullname_attribute = env('LDAP_FULLNAME_ATTRIBUTE', 'cn');
-$ldap_filter = env('LDAP_FILTER', '(&(objectClass=person)($ldap_login_attribute={login}))');
+$ldap_filter = env('LDAP_FILTER', '(&(objectClass=person)(uid={login}))');
 
 # Active Directory mode
 # true: use unicodePwd as password field
