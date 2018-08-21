@@ -300,11 +300,11 @@ $default_action = env('DEFAULT_ACTION', 'change');
 
 # Launch a posthook script after successful password change
 #$posthook = "/usr/share/self-service-password/posthook.sh";
-#$display_posthook_error = true;
+$display_posthook_error = ;env('DISPLAY_POSTHOOK_ERROR', true);
 
 # Hide some messages to not disclose sensitive information
 # These messages will be replaced by badcredentials error
-#$obscure_failure_messages = array("mailnomatch");
+$obscure_failure_messages = env('OBSCURE_FAILURE_MESSAGES', array("mailnomatch"));
 
 # Allow to override current settings with local configuration
 if (file_exists (__DIR__ . '/config.inc.local.php')) {
